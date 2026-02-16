@@ -2,7 +2,7 @@
 import React from 'react';
 import { participants } from '../data';
 
-const Leaderboard = () => {
+const Leaderboard = ({ user }) => {
     return (
         <div className="leaderboard-container">
             <h2 style={{ textAlign: 'center', marginBottom: '2rem' }}>OFFICIAL STANDINGS</h2>
@@ -17,8 +17,8 @@ const Leaderboard = () => {
                 <div className="leaderboard-body">
                     {participants.map((player) => {
                         const isTop3 = player.rank <= 3;
-                        // Highlight Rank 34 (Aryan Jangir) specifically
-                        const isHighlight = player.rank === 34;
+                        // Highlight Rank 34 (Aryan Jangir) only if user is logged in
+                        const isHighlight = user && player.rank === 34;
 
                         let rowClass = "leaderboard-row";
                         if (isTop3) rowClass += ` rank-${player.rank}`;

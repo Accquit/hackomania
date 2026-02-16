@@ -70,7 +70,7 @@ function App() {
         />
 
         <Hero />
-        <Leaderboard />
+        <Leaderboard user={user} />
 
         <footer style={{ marginTop: '4rem', padding: '2rem', borderTop: '1px solid rgba(255,255,255,0.1)', color: '#64748b', fontSize: '0.8rem' }}>
           <p>© 2026 IEEE Computer Society, Manipal University Jaipur</p>
